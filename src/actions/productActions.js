@@ -4,6 +4,7 @@ import {
   ADD_PRODUCT_ERROR
 } from '../types';
 import clientAxios from '../config/axios';
+import Swal from 'sweetalert2';
 
 // Create new products
 export function createNewProductAction( product ) {
@@ -16,10 +17,24 @@ export function createNewProductAction( product ) {
 
       // set state
       dispatch( addProductSuccess(product) );
+
+      // Alert
+      Swal.fire(
+        'Success!',
+        'The product was added successfully.',
+        'success'
+      )
     } catch (error) {
       console.log(error);
       //if there is a error change the state
       dispatch( addProductError(true) );
+
+      // Alert error
+      Swal.fire({
+        icon: 'error',
+        title: 'Error!',
+        text: 'There was an error.'
+      })
     }
   }
 }
