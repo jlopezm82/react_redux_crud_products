@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; // useDispatch -> To execution the actions
                                                         // useSelector -> To access the state into the component
 
@@ -7,22 +7,32 @@ import { createNewProductAction } from '../actions/productActions';
 
 const NewProduct = () => {
 
+  // component state
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState(0);
+
   // use useDispatch and it create a function
   const dispatch = useDispatch();
 
   // To communicate with the actions
   // Call the action from productAction
-  const addProduct = () => dispatch( createNewProductAction() );
+  const addProduct = (product) => dispatch( createNewProductAction(product) );
 
   const submitNewProduct = (event) => {
     event.preventDefault();
 
-    // Check form
+    // Validate form
+    if ( name.trim() === '' || price <= 0 ) {
+      return;
+    }
 
     // Check errors
 
     // Create new product
-    addProduct();
+    addProduct({
+      name,
+      price
+    });
   }
 
   return (
@@ -41,15 +51,19 @@ const NewProduct = () => {
                   type="text"
                   className="form-control"
                   placeholder="Enter Product Name"
-                  name="name" />
+                  name="name"
+                  value={name}
+                  onChange={ event => setName(event.target.value) } />
               </div>
               <div className="form-group">
                 <label htmlFor="">Price</label>
                 <input
                   type="number"
                   className="form-control"
-                  placeholder="Enter Product Name"
-                  name="price" />
+                  placeholder="Enter Product Price"
+                  name="price"
+                  value={price}
+                  onChange={ event => setPrice( Number(event.target.value) ) } />
               </div>
               <button
                 type="submit"
