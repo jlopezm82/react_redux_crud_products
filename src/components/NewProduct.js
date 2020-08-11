@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'; // useDispatch -> To execution the actions
-                                                        // useSelector -> To access the state into the component
+
+// Redux
+// useDispatch -> To execution the actions
+// useSelector -> To access the state into the component
+import { useDispatch, useSelector } from 'react-redux';
+
 
 //Redux Actions
 import { createNewProductAction } from '../actions/productActions';

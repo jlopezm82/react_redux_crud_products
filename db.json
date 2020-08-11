@@ -1,34 +1,48 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "nombre": "Jugo de Zanahoria",
-      "precio": "31111"
-    },
-    {
-      "id": 2,
-      "nombre": "Jugo de Naranja",
-      "precio": "1"
-    },
-    {
-      "nombre": "Jugo de Naranja",
-      "precio": "300",
-      "id": 3
-    },
-    {
-      "nombre": "Rib Eye 800g",
-      "precio": "200",
-      "id": 4
-    },
-    {
-      "nombre": "Jugo de Fresa",
-      "precio": "200",
-      "id": 5
-    },
-    {
-      "name": "Eye",
-      "price": 550000,
-      "id": 6
-    }
-  ]
+    "products": [{
+            "id": 1,
+            "name": "Jugo de Zanahoria",
+            "price": "31111"
+        },
+        {
+            "id": 2,
+            "name": "Jugo de Naranja",
+            "price": "1"
+        },
+        {
+            "name": "Jugo de Naranja",
+            "price": "300",
+            "id": 3
+        },
+        {
+            "name": "Rib Eye 800g",
+            "price": "200",
+            "id": 4
+        },
+        {
+            "name": "Jugo de Fresa",
+            "price": "200",
+            "id": 5
+        },
+        {
+            "name": "Eye",
+            "price": 550000,
+            "id": 6
+        },
+        {
+            "name": "jkj",
+            "price": 44578,
+            "id": 7
+        },
+        {
+            "name": "Nuevo producto",
+            "price": 234411,
+            "id": 8
+        },
+        {
+            "name": "new product",
+            "price": 23333,
+            "id": 9
+        }
+    ]
 }
