@@ -5,9 +5,9 @@ import React, { useState } from 'react';
 // useSelector -> To access the state into the component
 import { useDispatch, useSelector } from 'react-redux';
 
-
 //Redux Actions
 import { createNewProductAction } from '../actions/productActions';
+import { showAlertAction, hideAlertAction } from '../actions/alertActions';
 
 const NewProduct = ({ history }) => {
 
@@ -21,6 +21,7 @@ const NewProduct = ({ history }) => {
   // Access store state
   const loading = useSelector( state => state.products.loading );
   const error = useSelector( state => state.products.error );
+  const alert = useSelector( state => state.alert.alert );
 
   // To communicate with the actions
   // Call the action from productAction
@@ -31,10 +32,18 @@ const NewProduct = ({ history }) => {
 
     // Validate form
     if ( name.trim() === '' || price <= 0 ) {
+
+      const alert = {
+        message: 'All fields are mandatory',
+        classes: 'alert alert-danger text-center text-uppercase p3'
+      }
+      dispatch( showAlertAction(alert) );
+
       return;
     }
 
-    // Check errors
+    // Thera are no errors
+    dispatch( hideAlertAction() );
 
     // Create new product
     addProduct({
@@ -54,6 +63,9 @@ const NewProduct = ({ history }) => {
             <h2 className="text-center mb-4 font-weight-bold">
               Add New Product
             </h2>
+
+            { alert ? <p className={alert.classes}> {alert.message} </p> : null }
+
             <form
               onSubmit={submitNewProduct}>
               <div className="form-group">

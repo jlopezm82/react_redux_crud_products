@@ -28,21 +28,6 @@
             "name": "Eye",
             "price": 550000,
             "id": 6
-        },
-        {
-            "name": "jkj",
-            "price": 44578,
-            "id": 7
-        },
-        {
-            "name": "Nuevo producto",
-            "price": 234411,
-            "id": 8
-        },
-        {
-            "name": "new product",
-            "price": 23333,
-            "id": 9
         }
     ]
 }

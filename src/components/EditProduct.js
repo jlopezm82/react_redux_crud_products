@@ -20,7 +20,7 @@ const EditProduct = () => {
     setProduct(productEdit);
   }, [productEdit] );
 
-  const { id, name, price } = product;
+  const { name, price } = product;
 
   // get data from the form
   const onChangeForm = (event) => {
